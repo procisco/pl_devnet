@@ -12,7 +12,9 @@ from database import Database
 
 # Create Flask object and instantiate database object
 app = Flask(__name__)
-db = Database()
+
+path = "data/db.json"
+db = Database(path)
 
 
 @app.route("/", methods=["GET", "POST"])
