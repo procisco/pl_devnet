@@ -22,8 +22,11 @@ class Database:
 
         # Open the specified database file for reading and perform loading
         with open(path, "r") as handle:
-            import json
-            self.data = json.load(handle)
+            # import json
+            # self.data = json.load(handle)
+
+            import yaml
+            self.data = yaml.safe_load(handle)
 
 
 
