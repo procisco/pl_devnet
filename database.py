@@ -13,18 +13,19 @@ class Database:
     data to keep things simple for now.
     """
 
-    def __init__(self):
+    def __init__(self, path):
         """
         Constructor to initialize the data attribute as
         a dictionary where the account number is the key and
         the value is another dictionary with keys "paid" and "due".
         """
 
-        self.data = {
-            "ACCT100": {"paid": 60, "due": 100},  # balance = 40
-            "ACCT200": {"paid": 70, "due": 60},  # balance = -10
-            "ACCT300": {"paid": 0, "due": 0},  # balance = 0
-        }
+        # Open the specified database file for reading and perform loading
+        with open(path, "r") as handle:
+            import json
+            self.data = json.load(handle)
+
+
 
     def balance(self, acct_id):
         """
