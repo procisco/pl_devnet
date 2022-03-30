@@ -29,7 +29,7 @@ class Database:
             # self.data = yaml.safe_load(handle)
 
             import xmltodict
-            self.data = xmltodict.parse(handle.read()) ["root"]
+            self.data = xmltodict.parse(handle.read())["root"]
             print(self.data)
 
 
