@@ -15,7 +15,5 @@ jobs:
     - name: Linting
       uses: ansible-community/ansible-lint-action@main
       with:
-        targets: |
-          ansible/playbook.yml
-          ansible/inventory.yml
+        path: "ansible/"
 ...
