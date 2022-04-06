@@ -58,7 +58,7 @@
       become: yes
 
     - name: Ensure MySql Module for Apache is installed
-      apt: name=php7.2-mysql=7.2.24* state=present
+      apt: name=php7.2-mysql=7.2.24* state=latest
       become: yes
 
 - name: Deploy the application-package
