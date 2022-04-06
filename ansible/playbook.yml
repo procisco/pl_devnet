@@ -2,12 +2,12 @@
 - name: Basic configuration for all servers
   # The approach in this playbook is shared on numerous locations online, it is impossible to find the original source
   # One source is: https://serverfault.com/questions/132970/can-i-automatically-add-a-new-host-to-known-hosts
-  hosts: all
+  hosts: localhost
   gather_facts: false
   connection: local
   tasks:
     - name: ensure .ssh directory exists
-      asnbile.builtin.file:
+      ansible.builtin.file:
         path: ~/.ssh
         mode: 0700
         state: directory
