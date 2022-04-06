@@ -2,7 +2,7 @@
 - name: Basic configuration for all servers
   # The approach in this playbook is shared on numerous locations online, it is impossible to find the original source
   # One source is: https://serverfault.com/questions/132970/can-i-automatically-add-a-new-host-to-known-hosts
-  hosts: localhost
+  hosts: web-servers
   gather_facts: false
   connection: local
   tasks:
@@ -74,7 +74,7 @@
       become: true
 
     - name: Ensure default HTML file does not exist
-      andible.builtin.file:
+      ansible.builtin.file:
         path: /var/www/html/index.html
         state: absent
       become: true
