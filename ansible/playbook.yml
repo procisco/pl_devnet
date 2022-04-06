@@ -30,7 +30,7 @@
       when: keygen.rc == 1
 
     - name: add ssh-key to local known_hosts
-      lineinfile:
+      ansible.builtin.lineinfile:
         name: ~/.ssh/known_hosts
         create: true
         line: "{{ item }}"
@@ -58,7 +58,7 @@
       become: true
 
     - name: Ensure MySql Module for Apache is installed
-      ansible.builtin.apt: name=php7.2-mysql=7.2.24* state=latest
+      ansible.builtin.apt: name=php7.2-mysql=7.2.24* state=present
       become: true
 
 - name: Deploy the application-package
