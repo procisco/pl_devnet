@@ -1,0 +1,4 @@
+---
+warn_list:
+  - '602' # Don't compare to  emplty string
+...
