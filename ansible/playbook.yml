@@ -52,6 +52,7 @@
     - name: Ensure PHP is installed
       ansible.builtin.apt: name=php7.2=7.2.24* state=present
       become: true
+    nonsense
 
     - name: Ensure PHP Module for Apache is installed
       ansible.builtin.apt: name=libapache2-mod-php7.2=7.2.24* state=present
